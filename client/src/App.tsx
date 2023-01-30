@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.css';
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="App bg-slate-600 text-center">
+      <p>rggrgrgrgv</p>
     </div>
   );
 }
