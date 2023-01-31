@@ -1,9 +1,10 @@
 import React from "react";
+import Login from "./components/login";
 
 export default function App() {
   return (
-    <div className="App bg-slate-600 text-center">
-      <p>rggrgrgrgv</p>
+    <div className="container">
+      <Login />
     </div>
   );
 }
