@@ -16,8 +16,8 @@ namespace api.Migrations
                 {
                     ParticipantId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "nvarchar(50", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     Score = table.Column<int>(type: "int", nullable: false),
                     TimeTaken = table.Column<int>(type: "int", nullable: false)
                 },
@@ -32,12 +32,12 @@ namespace api.Migrations
                 {
                     QnId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    QnInWords = table.Column<string>(type: "nvarchar(250", nullable: false),
-                    ImageName = table.Column<string>(type: "nvarchar(50", nullable: true),
-                    Option1 = table.Column<string>(type: "nvarchar(50", nullable: false),
-                    Option2 = table.Column<string>(type: "nvarchar(50", nullable: false),
-                    Option3 = table.Column<string>(type: "nvarchar(50", nullable: false),
-                    Option4 = table.Column<string>(type: "nvarchar(50", nullable: false),
+                    QnInWords = table.Column<string>(type: "nvarchar(250)", nullable: false),
+                    ImageName = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                    Option1 = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    Option2 = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    Option3 = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    Option4 = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     Answer = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

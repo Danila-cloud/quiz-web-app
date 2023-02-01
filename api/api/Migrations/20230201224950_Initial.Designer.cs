@@ -11,7 +11,7 @@ using api.Models;
 namespace api.Migrations
 {
     [DbContext(typeof(QuizDbContext))]
-    [Migration("20230201212858_Initial")]
+    [Migration("20230201224950_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -34,11 +34,11 @@ namespace api.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("Score")
                         .HasColumnType("int");
@@ -63,27 +63,27 @@ namespace api.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ImageName")
-                        .HasColumnType("nvarchar(50");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Option1")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Option2")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Option3")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Option4")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("QnInWords")
                         .IsRequired()
-                        .HasColumnType("nvarchar(250");
+                        .HasColumnType("nvarchar(250)");
 
                     b.HasKey("QnId");
 
