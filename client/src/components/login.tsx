@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Button, TextField, Box, Typography } from "@mui/material";
 import useForm from "../hooks/useForm";
+import { createAPIEndpoint, ENDPOINTS } from "../api";
 
 const getFreshModel = () => ({
   name: "",
@@ -14,7 +15,10 @@ export default function Login() {
   const login = (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log(values);
+      createAPIEndpoint(ENDPOINTS.participant)
+        .post(values)
+        .then((res) => console.log(res))
+        .catch((error) => console.log(error));
     }
   };
 
@@ -41,7 +45,7 @@ export default function Login() {
           },
         }}
       >
-        <form noValidate autoComplete="off" onSubmit={login}>
+        <form noValidate autoComplete="on" onSubmit={login}>
           <TextField
             label="Email"
             name="email"
