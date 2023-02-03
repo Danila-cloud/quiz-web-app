@@ -21,7 +21,14 @@ const getFreshContext = () => {
 
 export function useStateContext() {
   const { context, setContext } = useContext(stateContext);
-  return { context, setContext: (obj) => setContext({ ...context, ...obj }) };
+  return {
+    context,
+    setContext: (obj) => setContext({ ...context, ...obj }),
+    resetContext: () => {
+      localStorage.removeItem("context");
+      setContext(getFreshContext);
+    },
+  };
 }
 
 export default function ContextProvider({ children }) {
@@ -29,7 +36,7 @@ export default function ContextProvider({ children }) {
 
   useEffect(() => {
     localStorage.setItem("context", JSON.stringify(context));
-  }, [context])
+  }, [context]);
   return (
     <stateContext.Provider value={{ context, setContext }}>
       {children}

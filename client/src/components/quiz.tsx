@@ -14,6 +14,7 @@ import { createAPIEndpoint, ENDPOINTS } from "../api";
 import { getFormatedTime } from "../helpers/timer";
 import { useStateContext } from "../hooks/useStateContext";
 import { BASE_URL } from "../api";
+import { useNavigate } from "react-router-dom";
 
 export default function Quiz() {
   const [qns, setQns] = useState([]); // @ts-ignore
@@ -24,6 +25,8 @@ export default function Quiz() {
 
   const { context, setContext } = useStateContext(); // @ts-ignore
 
+  const navigate = useNavigate();
+
   let timer;
   const startTimer = () => {
     timer = setInterval(() => {
@@ -32,6 +35,11 @@ export default function Quiz() {
   };
 
   useEffect(() => {
+    setContext({
+      timeTaken: 0,
+      selectedOptions: [],
+    });
+
     createAPIEndpoint(ENDPOINTS.question)
       .fetch()
       .then((res) => {
@@ -58,11 +66,12 @@ export default function Quiz() {
       setQnIndex(qnIndex + 1);
     } else {
       setContext({ selectedOptions: [...temp], timeTaken });
+      navigate("/result");
     }
   };
 
   return qns.length !== 0 ? (
-    <div className="max-w-[640px] mx-auto mt-5 bg-slate-800 p-4">
+    <div className="max-w-[640px] mx-auto mt-14 bg-slate-800 p-4">
       <Typography className="absolute flex justify-start" variant="h6">
         {getFormatedTime(timeTaken)}
       </Typography>
