@@ -2,6 +2,9 @@ import * as React from "react";
 import { Button, TextField, Box, Typography } from "@mui/material";
 import useForm from "../hooks/useForm";
 import { createAPIEndpoint, ENDPOINTS } from "../api";
+import { useContext } from "react";
+import { stateContext, useStateContext } from "../hooks/useStateContext";
+import { useNavigate } from "react-router-dom";
 
 const getFreshModel = () => ({
   name: "",
@@ -9,15 +12,22 @@ const getFreshModel = () => ({
 });
 
 export default function Login() {
+  const { context, setContext } = useStateContext();
+
   const { values, setValues, errors, setErrors, handleInputChange } =
     useForm(getFreshModel);
+
+  const navigate = useNavigate();
 
   const login = (e) => {
     e.preventDefault();
     if (validate()) {
       createAPIEndpoint(ENDPOINTS.participant)
         .post(values)
-        .then((res) => console.log(res))
+        .then((res) => {
+          setContext({ participantId: res.data.participantId });
+          navigate("/quiz");
+        })
         .catch((error) => console.log(error));
     }
   };
