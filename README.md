@@ -5,6 +5,7 @@
 ![ASP.NET](https://img.shields.io/badge/-ASP.NET-090909?style=for-the-badge&logo=asp.net)
 ![Csharp](https://img.shields.io/badge/-CSHARP-090909?style=for-the-badge&logo=csharp)
 ![SQL](https://img.shields.io/badge/-SQL-090909?style=for-the-badge&logo=mysql)
+![MUI](https://img.shields.io/badge/-MUI-090909?style=for-the-badge&logo=mui)
 
 ## Available Scripts
 
