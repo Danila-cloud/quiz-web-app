@@ -1,6 +1,10 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# In project was used:
+![React](https://img.shields.io/badge/-React-090909?style=for-the-badge&logo=react)
+![Typescript](https://img.shields.io/badge/-Typescript-090909?style=for-the-badge&logo=typescript)
+![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-090909?style=for-the-badge&logo=tailwindCSS)
+![ASP.NET](https://img.shields.io/badge/-ASP.NET-090909?style=for-the-badge&logo=asp.net)
+![Csharp](https://img.shields.io/badge/-CSHARP-090909?style=for-the-badge&logo=csharp)
+![SQL](https://img.shields.io/badge/-SQL-090909?style=for-the-badge&logo=mysql)
 
 ## Available Scripts
 
