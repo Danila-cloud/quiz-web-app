@@ -7,6 +7,9 @@
 ![SQL](https://img.shields.io/badge/-SQL-090909?style=for-the-badge&logo=mysql)
 ![MUI](https://img.shields.io/badge/-MUI-090909?style=for-the-badge&logo=mui)
 
+## Idea/design example was taken from
+https://www.youtube.com/@CodAffection
+
 ## Available Scripts
 
 In the project directory, you can run:
