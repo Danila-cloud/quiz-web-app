@@ -1,7 +1,9 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import * as React from "react";
 import { createContext, useContext, useEffect, useState } from "react";
 
-export const stateContext = React.createContext(undefined);
+export const stateContext = createContext();
 
 const getFreshContext = () => {
   if (localStorage.getItem("context") === null) {
@@ -10,7 +12,7 @@ const getFreshContext = () => {
       JSON.stringify({
         participantId: 0,
         timeTaken: 0,
-        selectOptions: [],
+        selectedOptions: [],
       })
     );
   }
@@ -28,7 +30,6 @@ export default function ContextProvider({ children }) {
   useEffect(() => {
     localStorage.setItem("context", JSON.stringify(context));
   }, [context])
-
   return (
     <stateContext.Provider value={{ context, setContext }}>
       {children}
