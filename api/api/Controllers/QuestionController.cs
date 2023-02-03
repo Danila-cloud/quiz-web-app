@@ -28,7 +28,16 @@ namespace api.Controllers
           {
               return NotFound();
           }
-            return await _context.Questions.ToListAsync();
+
+          var randomQuestions = await (_context.Questions.Select(x => new
+          {
+              QnId = x.QnId,
+              QnInWords = x.QnInWords,
+              ImageName = x.ImageName,
+              Options = new string[] { x.Option1, x.Option2, x.Option3, x.Option4 },
+          }).OrderBy(y => Guid.NewGuid()).Take(5)).ToListAsync();
+
+          return Ok(randomQuestions);
         }
 
         // GET: api/Question/5
@@ -39,7 +48,7 @@ namespace api.Controllers
           {
               return NotFound();
           }
-            var question = await _context.Questions.FindAsync(id);
+          var question = await _context.Questions.FindAsync(id);
 
             if (question == null)
             {
