@@ -89,7 +89,7 @@ namespace api.Controllers
             return NoContent();
         }
 
-        // POST: api/Question/getAnswers
+        // POST: api/Question/GetAnswers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("GetAnswers")]
