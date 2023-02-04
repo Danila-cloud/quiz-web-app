@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = 'https://localhost:7167/';
+export const BASE_URL = "https://localhost:7167/";
 
 export const ENDPOINTS = {
   participant: "participant",
